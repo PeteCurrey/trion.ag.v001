@@ -1,0 +1,191 @@
+/* ============================================================
+   BASE.CSS — Design tokens, font-face, reset, typography
+   ============================================================ */
+
+/* ── Google Fonts (freely available equivalents) ── */
+@import url('https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Martian+Mono:wght@300&display=swap');
+
+/* ── Font-face for proprietary fonts (fallbacks provided) ── */
+/* If you have NeueHaasDisplay and PPEditorialNew font files,
+   place them in /fonts/ and uncomment these rules:
+
+@font-face {
+  font-family: 'NeueHaasDisplay';
+  src: url('../fonts/NeueHaasDisplay-Roman.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PPEditorialNew';
+  src: url('../fonts/PPEditorialNew-Ultralight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+/* ── Design Tokens ── */
+:root {
+  /* Colors */
+  --color-black: #272727;
+  --color-white: #fff;
+  --color-cream: #E6E4E2;
+  --color-cream-line: #D8D8D8;
+  --color-grey-light: #9C9C9C;
+  --color-grey-line: #434343;
+  --color-dark-font: #434343;
+  --color-light-font: #D8D8D8;
+
+  /* Hero/dark backgrounds */
+  --bg-hero: #0C0C0C;
+  --bg-dark: #0C0C0C;
+  --bg-mid: #2F3135;
+
+  /* Typography */
+  --font-display: 'PPEditorialNew', 'DM Serif Display', 'Georgia', serif;
+  --font-heading: 'NeueHaasDisplay', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  --font-body: 'Familjen Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Martian Mono', 'Courier New', monospace;
+
+  /* Spacing */
+  --spacing: 0.25rem;
+  --container-padding: 2rem;
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0 solid;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-dark-font);
+  background-color: var(--bg-hero);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ── Typography Scale ── */
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: clamp(3rem, 8.5vw, 9rem);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-weight: 200;
+  font-size: clamp(2rem, 5vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+h3, .h3 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.small {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.number-small {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  font-variant-numeric: tabular-nums;
+}
+
+p {
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* ── Utilities ── */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+}
+
+.will-change-transform {
+  will-change: transform;
+}
+
+.mix-blend-difference {
+  mix-blend-mode: difference;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-dark-font);
+  color: var(--color-white);
+}

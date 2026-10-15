@@ -1,0 +1,422 @@
+/* ============================================================
+   COMPONENTS.CSS — Buttons, nav-link hover, contact popup, forms
+   ============================================================ */
+
+/* ── Animated Button (underline + arrow) ── */
+.button_wrapper {
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  transition: opacity 0.3s;
+}
+.button_wrapper:hover { opacity: 0.95; }
+
+.btn {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 2.5rem;
+  cursor: pointer;
+  align-items: center;
+  overflow: hidden;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-inline: 0;
+}
+
+/* Underline animation */
+.btn .underline {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  min-height: 1px;
+  pointer-events: none;
+}
+.btn .u-right {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  min-height: 1px;
+  will-change: transform;
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: transform var(--out-time, 200ms) ease;
+}
+.btn .u-left {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  height: 1px;
+  min-height: 1px;
+  will-change: transform;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--in-time, 320ms) ease;
+}
+
+.btn:hover .u-right { transform: scaleX(0); }
+.btn:hover .u-left  { transform: scaleX(1); }
+
+/* Button word (letter stagger) */
+.btn .word {
+  position: relative;
+  display: inline-flex;
+  will-change: transform;
+  padding-right: 1px;
+}
+.btn .text {
+  display: inline-block;
+  user-select: none;
+  will-change: transform;
+}
+
+/* Arrow sprites */
+.btn .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.btn .arrow-right { right: 0; justify-content: flex-end; }
+.btn .arrow-left  { left: 0; justify-content: flex-start; }
+
+.btn .arrow-sprite {
+  opacity: 0;
+  will-change: transform, opacity;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.btn .arrow-right .arrow-sprite { justify-content: flex-end; }
+
+/* On hover: slide word left, show right arrow */
+.btn:hover .word { transform: translateX(0); }
+
+/* ── Nav Link (character hover effect) ── */
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  line-height: 1;
+  overflow: visible;
+  user-select: none;
+}
+.nav-link .text-layer {
+  display: inline-flex;
+}
+.nav-link .text-layer.original {
+  /* base */
+}
+.nav-link .text-layer.clone {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.nav-link .char {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+  transition: transform 0.3s var(--ease-expo), opacity 0.3s var(--ease-expo);
+}
+
+/* On hover: original chars slide up, clones slide in from below */
+.nav-link:hover .text-layer.original .char {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.nav-link:hover .text-layer.clone {
+  opacity: 1;
+}
+.nav-link:hover .text-layer.clone .char {
+  transform: translateY(0);
+  opacity: 1;
+}
+.nav-link .text-layer.clone .char {
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s var(--ease-expo), opacity 0.3s var(--ease-expo);
+}
+
+/* Stagger chars */
+.nav-link .char:nth-child(1)  { transition-delay: calc(0 * 30ms); }
+.nav-link .char:nth-child(2)  { transition-delay: calc(1 * 30ms); }
+.nav-link .char:nth-child(3)  { transition-delay: calc(2 * 30ms); }
+.nav-link .char:nth-child(4)  { transition-delay: calc(3 * 30ms); }
+.nav-link .char:nth-child(5)  { transition-delay: calc(4 * 30ms); }
+.nav-link .char:nth-child(6)  { transition-delay: calc(5 * 30ms); }
+.nav-link .char:nth-child(7)  { transition-delay: calc(6 * 30ms); }
+.nav-link .char:nth-child(8)  { transition-delay: calc(7 * 30ms); }
+.nav-link .char:nth-child(9)  { transition-delay: calc(8 * 30ms); }
+.nav-link .char:nth-child(10) { transition-delay: calc(9 * 30ms); }
+.nav-link .char:nth-child(11) { transition-delay: calc(10 * 30ms); }
+.nav-link .char:nth-child(12) { transition-delay: calc(11 * 30ms); }
+.nav-link .char:nth-child(13) { transition-delay: calc(12 * 30ms); }
+.nav-link .char:nth-child(14) { transition-delay: calc(13 * 30ms); }
+.nav-link .char:nth-child(15) { transition-delay: calc(14 * 30ms); }
+.nav-link .char:nth-child(16) { transition-delay: calc(15 * 30ms); }
+
+/* ── Contact Popup ── */
+.contact-popup-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.contact-popup-wrapper.is-open {
+  pointer-events: all;
+  opacity: 1;
+  visibility: visible;
+}
+
+.contact-popup-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: rgba(0,0,0,0);
+  transition: background 0.4s ease;
+}
+.contact-popup-wrapper.is-open .contact-popup-backdrop {
+  pointer-events: all;
+  background: rgba(0,0,0,0.4);
+}
+
+.contact-popup-panel {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: white;
+  color: var(--color-dark-font);
+  clip-path: circle(0% at 95% 5%);
+  opacity: 0;
+  visibility: hidden;
+  transition: clip-path 0.6s var(--ease-expo), opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: auto;
+}
+@media (min-width: 768px) {
+  .contact-popup-panel {
+    max-width: 34rem;
+    max-height: 100%;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-cream);
+    margin: 1rem;
+  }
+}
+
+.contact-popup-wrapper.is-open .contact-popup-panel {
+  clip-path: circle(150% at 95% 5%);
+  opacity: 1;
+  visibility: visible;
+}
+
+.contact-popup-inner {
+  display: flex;
+  min-height: 100%;
+  width: 100%;
+  flex-direction: column;
+  padding: 1.5rem;
+  color: var(--color-dark-font);
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .contact-popup-inner { padding: 2.5rem; }
+}
+
+.popup-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 20;
+  display: flex;
+  width: 1.75rem;
+  height: 1.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(17,18,20,0.15);
+  color: #111214;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+.popup-close:hover { border-color: rgba(17,18,20,0.6); }
+
+/* ── Contact Form ── */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-field {
+  position: relative;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(67,67,67,0.15);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--color-dark-font);
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+  -webkit-appearance: none;
+}
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(67,67,67,0.6);
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--color-dark-font);
+}
+.form-field textarea { resize: none; }
+
+/* Custom select button */
+.form-select-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(67,67,67,0.15);
+  border-radius: var(--radius-lg);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: rgba(67,67,67,0.6);
+  padding: 0.75rem 1rem;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.3s;
+}
+.form-select-btn.has-value { color: var(--color-dark-font); }
+.form-select-btn:focus { border-color: var(--color-dark-font); }
+
+.select-dropdown {
+  position: absolute;
+  left: 0; right: 0;
+  top: calc(100% + 0.25rem);
+  z-index: 30;
+  max-height: 15rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  border: 1px solid rgba(67,67,67,0.15);
+  border-radius: var(--radius-sm);
+  padding: 0.25rem 0;
+  background: white;
+  color: var(--color-dark-font);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-0.5rem);
+  transform-origin: top;
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+  pointer-events: none;
+}
+.select-dropdown.is-open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+.select-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  transition: background 0.2s, color 0.2s;
+  background: none;
+  border: none;
+}
+.select-option:hover {
+  background: var(--color-dark-font);
+  color: white;
+}
+
+/* Form submit */
+.form-submit-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+  border: none;
+}
+
+/* "or" divider */
+.or-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+.or-divider .line {
+  height: 1px;
+  flex: 1;
+  background: rgba(0,0,0,0.1);
+}
+.or-divider .text {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: rgba(0,0,0,0.6);
+}
+
+/* Calendly button */
+.calendly-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-lg);
+  border: 1px solid black;
+  background: var(--color-cream);
+  padding: 1rem 2.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--color-dark-font);
+  transition: background 0.3s, color 0.3s;
+  width: 100%;
+  cursor: pointer;
+}
+.calendly-btn:hover {
+  background: black;
+  color: var(--color-light-font);
+}
+.calendly-btn svg {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Popup email link */
+.popup-email-note {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  text-align: center;
+  color: rgba(67,67,67,0.6);
+  margin-top: 1.5rem;
+}
+.popup-email-note a { color: var(--color-dark-font); }

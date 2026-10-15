@@ -1,0 +1,119 @@
+/* ============================================================
+   ANIMATIONS.CSS — Keyframes and transition helpers
+   ============================================================ */
+
+/* ── Arrow pulse (CTA buttons) ── */
+@keyframes arrowPulse {
+  0%, 100% { transform: translateX(0); }
+  50%       { transform: translateX(4px); }
+}
+
+/* ── Fade in up (general utility) ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Slot counter roll ── */
+@keyframes slotRoll {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-100%); }
+}
+
+/* ── Marquee ── */
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  animation: marqueeScroll 20s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Scroll reveal helpers (applied by JS) ── */
+.sr-hidden {
+  visibility: hidden;
+}
+.sr-ready {
+  visibility: visible;
+}
+
+/* ── Text reveal (split chars) ── */
+.char-hidden .char {
+  transform: translateY(110%);
+  opacity: 0;
+  display: inline-block;
+}
+
+/* ── Vision section stripe overlay ── */
+/* Stripes are driven by GSAP ScrollTrigger */
+
+/* ── Selective transition helper ── */
+.selective-transition {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s var(--ease-expo), visibility 0.6s var(--ease-expo);
+}
+.selective-transition.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ── Line expand ── */
+.line-expand {
+  width: 0;
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.line-expand.visible { width: 100%; }
+
+/* ── Plus icon spin on hover ── */
+.plus-spin {
+  transition: transform 0.4s var(--ease-expo);
+}
+.plus-spin:hover { transform: rotate(90deg); }
+
+/* ── Smooth scroll restoration ── */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ── Perspective 3D card tilt ── */
+.transform-3d {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* ── Mix blend difference text areas ── */
+.mix-diff-text {
+  mix-blend-mode: difference;
+  color: white;
+}
+
+/* ── Circular scroll indicator arrow bounce ── */
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(4px); }
+}
+.scroll-arrow {
+  animation: bounceDown 1.6s ease-in-out infinite;
+}

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#040508"/>
+
+  <title>TRIONN | AI-Powered Creative Design &amp; Development Studio in India</title>
+  <meta name="description" content="TRIONN is an independent AI-powered digital studio crafting meaningful brand experiences through strategy, design, and technology. Based in Rajkot, Gujarat, India, we create premium websites, immersive digital products, and interactive experiences for ambitious brands worldwide."/>
+  <meta name="author" content="TRIONN"/>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="TRIONN | AI-Powered Creative Design &amp; Development Studio"/>
+  <meta property="og:description" content="Independent AI-powered digital studio crafting premium brand experiences through strategy, design, and technology."/>
+  <meta property="og:url" content="https://trionn.com"/>
+  <meta property="og:image" content="https://trionn.com/opengraph-image.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.svg" sizes="32x32" type="image/svg+xml"/>
+
+  <!-- Preload logo -->
+  <link rel="preload" as="image" href="images/logo.svg" fetchpriority="high"/>
+
+  <!-- Fonts (Google) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Martian+Mono:wght@300&display=swap" rel="stylesheet"/>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/preloader.css"/>
+  <link rel="stylesheet" href="css/layout.css"/>
+  <link rel="stylesheet" href="css/sections.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Lenis smooth scroll -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+  <script>
+    if (window.gsap && window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+  </script>
+</head>
+
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     PRELOADER
+═══════════════════════════════════════════════════ -->
+
+<!-- Brief white/grey flash overlay -->
+<div class="pl-white-overlay"></div>
+
+<!-- 10-belt animated overlay -->
+<div class="pl-overlay active">
+  <div class="pl-belt"></div><div class="pl-belt"></div><div class="pl-belt"></div>
+  <div class="pl-belt"></div><div class="pl-belt"></div><div class="pl-belt"></div>
+  <div class="pl-belt"></div><div class="pl-belt"></div><div class="pl-belt"></div>
+  <div class="pl-belt"></div>
+</div>
+
+<!-- Flying plus decorators -->
+<div class="pl-flying-plus" style="opacity:0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#555"/><line x1="13" y1="6.5" x2="0" y2="6.5" stroke="#555"/></svg></div>
+<div class="pl-flying-plus" style="opacity:0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#555"/><line x1="13" y1="6.5" x2="0" y2="6.5" stroke="#555"/></svg></div>
+<div class="pl-flying-plus" style="opacity:0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#555"/><line x1="13" y1="6.5" x2="0" y2="6.5" stroke="#555"/></svg></div>
+<div class="pl-flying-plus" style="opacity:0"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#555"/><line x1="13" y1="6.5" x2="0" y2="6.5" stroke="#555"/></svg></div>
+
+<!-- Center logo + counter -->
+<div class="pl-overlay-center">
+  <div class="pl-overlay-logo-wrap">
+    <div class="pl-logo-black-box"></div>
+
+    <svg class="pl-border-svg" style="opacity:0">
+      <rect x="0.75" y="0.75" width="1" height="1" fill="none" stroke="#434343" stroke-width="1.5" stroke-dasharray="1" stroke-dashoffset="1" pathLength="1" rx="2"/>
+    </svg>
+
+    <!-- Corner plus decorators -->
+    <div class="pl-logo-corner-plus tl"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#555"/><line x1="13" y1="6.5" x2="0" y2="6.5" stroke="#555"/></svg></div>
+    <div class="pl-logo-corner-plus tr"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#555"/><line x1="13" y1="6.5" x2="0" y2="6.5" stroke="#555"/></svg></div>
+    <div class="pl-logo-corner-plus bl"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#555"/><line x1="13" y1="6.5" x2="0" y2="6.5" stroke="#555"/></svg></div>
+    <div class="pl-logo-corner-plus br"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#555"/><line x1="13" y1="6.5" x2="0" y2="6.5" stroke="#555"/></svg></div>
+
+    <!-- TRIONN T-shape logo paths (3 strokes of the icon) -->
+    <svg class="pl-t-path" viewBox="-79.5 -31.4 662 640" fill="none">
+      <defs><clipPath id="pl-clip1"><path fill-rule="evenodd" clip-rule="evenodd" d="M269.431 257.019C268.708 258.271 268.717 259.816 269.455 261.06L286.98 290.611C288.54 293.241 292.355 293.219 293.885 290.57L327.284 232.72C328.825 230.052 332.677 230.054 334.215 232.724L425.279 390.875C425.982 392.095 427.275 392.856 428.682 392.878L463.65 393.434C466.755 393.483 468.73 390.129 467.18 387.438L353.861 190.681C353.148 189.444 353.149 187.921 353.863 186.685L388.264 127.101C388.965 125.885 388.979 124.391 388.299 123.163L371.368 92.5833C369.861 89.8615 365.96 89.8265 364.404 92.5208L269.431 257.019Z"/></clipPath></defs>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M269.431 257.019C268.708 258.271 268.717 259.816 269.455 261.06L286.98 290.611C288.54 293.241 292.355 293.219 293.885 290.57L327.284 232.72C328.825 230.052 332.677 230.054 334.215 232.724L425.279 390.875C425.982 392.095 427.275 392.856 428.682 392.878L463.65 393.434C466.755 393.483 468.73 390.129 467.18 387.438L353.861 190.681C353.148 189.444 353.149 187.921 353.863 186.685L388.264 127.101C388.965 125.885 388.979 124.391 388.299 123.163L371.368 92.5833C369.861 89.8615 365.96 89.8265 364.404 92.5208L269.431 257.019Z" fill="none" stroke="#aaa" stroke-width="1.5"/>
+    </svg>
+    <svg class="pl-t-path" viewBox="-79.5 -31.4 662 640" fill="none">
+      <defs><clipPath id="pl-clip2"><path fill-rule="evenodd" clip-rule="evenodd" d="M316.66 425.547C318.087 425.545 319.406 426.304 320.123 427.537L356.868 490.777C357.572 491.989 358.86 492.744 360.263 492.767L395.242 493.322C398.347 493.372 400.322 490.018 398.773 487.327L304.909 324.268C304.196 323.03 302.878 322.266 301.449 322.263L265.933 322.201C262.846 322.196 260.916 325.543 262.468 328.212L293.454 381.508C295.005 384.176 293.079 387.521 289.993 387.519L107.1 387.384C105.67 387.383 104.348 388.146 103.633 389.384L86.0729 419.792C84.532 422.461 86.4598 425.796 89.5411 425.793L316.66 425.547Z"/></clipPath></defs>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M316.66 425.547C318.087 425.545 319.406 426.304 320.123 427.537L356.868 490.777C357.572 491.989 358.86 492.744 360.263 492.767L395.242 493.322C398.347 493.372 400.322 490.018 398.773 487.327L304.909 324.268C304.196 323.03 302.878 322.266 301.449 322.263L265.933 322.201C262.846 322.196 260.916 325.543 262.468 328.212L293.454 381.508C295.005 384.176 293.079 387.521 289.993 387.519L107.1 387.384C105.67 387.383 104.348 388.146 103.633 389.384L86.0729 419.792C84.532 422.461 86.4598 425.796 89.5411 425.793L316.66 425.547Z" fill="none" stroke="#aaa" stroke-width="1.5"/>
+    </svg>
+    <svg class="pl-t-path" viewBox="-79.5 -31.4 662 640" fill="none">
+      <defs><clipPath id="pl-clip3"><path fill-rule="evenodd" clip-rule="evenodd" d="M182.809 283.818C179.736 283.807 177.822 280.479 179.359 277.818L271.364 118.461C272.066 117.245 272.079 115.751 271.399 114.523L254.468 83.9432C252.961 81.2213 249.06 81.1863 247.504 83.8807L133.245 281.783C132.528 283.026 131.2 283.789 129.765 283.783L56.9478 283.499C55.5132 283.494 54.1855 284.257 53.4681 285.499L35.9048 315.92C34.3665 318.584 36.2864 321.915 39.363 321.92L229.336 322.201C230.767 322.203 232.091 321.441 232.806 320.201L250.222 290.036C251.759 287.375 249.845 284.047 246.771 284.036L182.809 283.818Z"/></clipPath></defs>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M182.809 283.818C179.736 283.807 177.822 280.479 179.359 277.818L271.364 118.461C272.066 117.245 272.079 115.751 271.399 114.523L254.468 83.9432C252.961 81.2213 249.06 81.1863 247.504 83.8807L133.245 281.783C132.528 283.026 131.2 283.789 129.765 283.783L56.9478 283.499C55.5132 283.494 54.1855 284.257 53.4681 285.499L35.9048 315.92C34.3665 318.584 36.2864 321.915 39.363 321.92L229.336 322.201C230.767 322.203 232.091 321.441 232.806 320.201L250.222 290.036C251.759 287.375 249.845 284.047 246.771 284.036L182.809 283.818Z" fill="none" stroke="#aaa" stroke-width="1.5"/>
+    </svg>
+  </div>
+
+  <!-- Tagline -->
+  <div class="pl-overlay-tagline">
+    <span class="pl-tag-word">Inspire</span>
+    <span class="pl-tag-dot">·</span>
+    <span class="pl-tag-word">Innovate</span>
+    <span class="pl-tag-dot">·</span>
+    <span class="pl-tag-word">Impact</span>
+  </div>
+
+  <!-- Counter -->
+  <div class="pl-overlay-counter">
+    <div class="pl-slot-reel"><div class="pl-slot-strip"></div></div>
+    <div class="pl-slot-reel"><div class="pl-slot-strip"></div></div>
+    <div class="pl-slot-reel"><div class="pl-slot-strip"></div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     MOBILE MENU
+═══════════════════════════════════════════════════ -->
+<div class="mobile-menu" aria-label="Mobile navigation" role="dialog" aria-modal="true">
+  <div class="mobile-menu-inner">
+    <nav class="mobile-menu-links">
+      <ul style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;">
+        <li><a class="mobile-menu-link" href="/work">Work</a></li>
+        <li><a class="mobile-menu-link" href="/services">Services</a></li>
+        <li><a class="mobile-menu-link" href="/about">About</a></li>
+        <li><a class="mobile-menu-link" href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:1.25rem;width:100%;">
+      <a href="/trionn-story" style="padding:0.375rem 1rem 0.5rem;border-radius:999px;border:1px solid rgba(216,216,216,0.5);font-family:var(--font-heading);font-size:0.75rem;letter-spacing:0.02em;text-transform:uppercase;color:white;">
+        ✦ The TRIONN name Story
+      </a>
+
+      <!-- Decorative line -->
+      <div style="position:relative;width:100%;display:flex;align-items:center;justify-content:center;height:1px;background:rgba(47,50,59,0.5);margin-block:1rem;">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" style="position:absolute;"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#D8D8D8" stroke-width="1"/><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#D8D8D8" stroke-width="1"/></svg>
+      </div>
+
+      <!-- Contact -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;">
+        <span style="font-family:var(--font-heading);font-size:0.75rem;letter-spacing:0.02em;text-transform:uppercase;color:rgba(216,216,216,0.5);display:block;text-align:center;">Business enquiry</span>
+        <p style="display:flex;gap:0.5rem;color:var(--color-light-font);">
+          <span style="text-transform:uppercase;opacity:0.5;font-family:var(--font-heading);font-size:0.75rem;">E.</span>
+          <a href="mailto:hello@trionn.com" style="color:var(--color-light-font);">hello@trionn.com</a>
+        </p>
+        <p style="display:flex;gap:0.5rem;color:var(--color-light-font);">
+          <span style="text-transform:uppercase;opacity:0.5;font-family:var(--font-heading);font-size:0.75rem;">P.</span>
+          <a href="tel:+919824182099" style="color:var(--color-light-font);">+91 98241 82099</a>
+        </p>
+      </div>
+
+      <!-- Est badge -->
+      <div class="hero-est-badge" style="color:var(--color-light-font);border-color:#2F323B;">
+        <div class="hero-est-badge-left">
+          <svg width="43" height="27" viewBox="0 0 43 27" fill="none"><mask id="path-1-inside-1_mobile" fill="white"><path d="M22.0098 0.00488281C33.425 0.18638 42.5948 5.94967 42.9004 13.1299C42.964 13.2463 43 13.3704 43 13.5C42.9856 13.5991 42.9515 13.6943 42.9033 13.7861C42.6622 21.1215 33.1713 26.9999 21.4551 27C9.58671 27 0 20.9681 0 13.5C7.01302e-06 6.03191 9.58672 0 21.4551 0L22.0098 0.00488281Z"/></mask><path d="M22.0098 0.00488281C33.425 0.18638 42.5948 5.94967 42.9004 13.1299C42.964 13.2463 43 13.3704 43 13.5C42.9856 13.5991 42.9515 13.6943 42.9033 13.7861C42.6622 21.1215 33.1713 26.9999 21.4551 27C9.58671 27 0 20.9681 0 13.5C7.01302e-06 6.03191 9.58672 0 21.4551 0L22.0098 0.00488281Z" fill="#D8D8D8" mask="url(#path-1-inside-1_mobile)"/></svg>
+          <span class="title" style="color:var(--color-light-font);">Est. 2012</span>
+        </div>
+        <div class="hero-est-badge-right">
+          <span class="title" style="color:var(--color-light-font);">14+ years shaping<br/>digital direction.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     DESKTOP MENU DRAWER
+═══════════════════════════════════════════════════ -->
+<div class="menu-wrapper-desktop" style="pointer-events:none;">
+  <div class="menu-block no-scrollbar" data-lenis-prevent="true" aria-label="Site navigation" role="dialog" aria-modal="true">
+    <div class="desktop-menu-inner">
+      <!-- Nav links -->
+      <div>
+        <nav class="desktop-menu-links" aria-label="Main navigation">
+          <div class="menu-link-item">
+            <a href="/work">
+              <span class="h3 link-text" style="font-family:var(--font-heading);font-weight:400;transition:opacity 0.3s;">Work</span>
+              <span class="menu-arrow" aria-hidden="true">
+                <svg width="10" height="9" viewBox="0 0 10 9" fill="none"><path d="M5.47372 8.652V6.552L8.32972 3.752V4.9L5.47372 2.1V-3.09944e-06L9.32372 3.836V4.816L5.47372 8.652ZM-0.000281237 5.11V3.542H8.60972V5.11H-0.000281237Z" fill="currentColor"/></svg>
+              </span>
+            </a>
+          </div>
+          <div class="menu-link-item">
+            <a href="/services">
+              <span class="h3 link-text" style="font-family:var(--font-heading);font-weight:400;transition:opacity 0.3s;">Services</span>
+              <span class="menu-arrow" aria-hidden="true">
+                <svg width="10" height="9" viewBox="0 0 10 9" fill="none"><path d="M5.47372 8.652V6.552L8.32972 3.752V4.9L5.47372 2.1V-3.09944e-06L9.32372 3.836V4.816L5.47372 8.652ZM-0.000281237 5.11V3.542H8.60972V5.11H-0.000281237Z" fill="currentColor"/></svg>
+              </span>
+            </a>
+          </div>
+          <div class="menu-link-item">
+            <a href="/about">
+              <span class="h3 link-text" style="font-family:var(--font-heading);font-weight:400;transition:opacity 0.3s;">About</span>
+              <span class="menu-arrow" aria-hidden="true">
+                <svg width="10" height="9" viewBox="0 0 10 9" fill="none"><path d="M5.47372 8.652V6.552L8.32972 3.752V4.9L5.47372 2.1V-3.09944e-06L9.32372 3.836V4.816L5.47372 8.652ZM-0.000281237 5.11V3.542H8.60972V5.11H-0.000281237Z" fill="currentColor"/></svg>
+              </span>
+            </a>
+          </div>
+          <div class="menu-link-item">
+            <a href="/contact">
+              <span class="h3 link-text" style="font-family:var(--font-heading);font-weight:400;transition:opacity 0.3s;">Contact</span>
+              <span class="menu-arrow" aria-hidden="true">
+                <svg width="10" height="9" viewBox="0 0 10 9" fill="none"><path d="M5.47372 8.652V6.552L8.32972 3.752V4.9L5.47372 2.1V-3.09944e-06L9.32372 3.836V4.816L5.47372 8.652ZM-0.000281237 5.11V3.542H8.60972V5.11H-0.000281237Z" fill="currentColor"/></svg>
+              </span>
+            </a>
+          </div>
+        </nav>
+
+        <!-- Story pill -->
+        <div style="padding-top:2.5rem;">
+          <a class="story-pill" href="/trionn-story">✦ The TRIONN name Story</a>
+        </div>
+      </div>
+
+      <!-- Bottom block -->
+      <div class="desktop-menu-bottom">
+        <!-- Business enquiry -->
+        <div class="menu-contact-block">
+          <span class="menu-section-label">Business Enquiry</span>
+          <div style="display:flex;flex-direction:column;gap:0.5rem;">
+            <div class="contact-row">
+              <span>E.</span>
+              <a href="mailto:hello@trionn.com" style="color:var(--color-dark-font);font-size:0.875rem;">hello@trionn.com</a>
+            </div>
+            <div class="contact-row">
+              <span>P.</span>
+              <a href="tel:+919824182099" style="color:var(--color-dark-font);font-size:0.875rem;">+91 98241 82099</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div class="menu-social-block">
+          <span class="menu-section-label">Social</span>
+          <div class="social-grid">
+            <a href="https://www.linkedin.com/company/trionnstudio/" target="_blank" style="color:var(--color-dark-font);font-size:0.875rem;">LinkedIn</a>
+            <a href="https://www.facebook.com/trionnstudio/" target="_blank" style="color:var(--color-dark-font);font-size:0.875rem;">Facebook</a>
+            <a href="https://dribbble.com/trionnstudio" target="_blank" style="color:var(--color-dark-font);font-size:0.875rem;">Dribbble</a>
+            <a href="https://www.instagram.com/trionnstudio/" target="_blank" style="color:var(--color-dark-font);font-size:0.875rem;">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     SITE HEADER
+═══════════════════════════════════════════════════ -->
+<header id="nav" class="site-header" role="banner">
+  <div class="tr__container">
+    <!-- Logo -->
+    <a class="logo" href="/" aria-label="TRIONN — Home">
+      <img src="images/logo.svg" alt="Trionn" width="94" height="25" loading="eager" decoding="async" fetchpriority="high"/>
+    </a>
+
+    <!-- Right controls -->
+    <div class="nav-controls">
+      <!-- Sound toggle -->
+      <button type="button" id="sound-toggle" title="Enable sound" aria-pressed="false" aria-label="Enable sound" class="sound-toggle">
+        <svg width="16" height="15" viewBox="0 0 16 15" fill="none" aria-hidden="true">
+          <g opacity="0.4">
+            <path d="M13.7223 1.45716C13.5773 1.31116 13.3425 1.31116 13.1975 1.45716C13.0526 1.60326 13.0526 1.84007 13.1975 1.98617C14.5261 3.32546 15.2578 5.10621 15.2578 7.00034C15.2578 8.89447 14.5261 10.6752 13.1975 12.0145C13.0526 12.1606 13.0526 12.3974 13.1975 12.5435C13.27 12.6165 13.365 12.6531 13.4599 12.6531C13.5548 12.6531 13.6498 12.6165 13.7223 12.5435C15.1909 11.0629 15.9998 9.09428 15.9998 7.00034C15.9998 4.90641 15.1909 2.9378 13.7223 1.45716Z" fill="currentColor"/>
+            <path d="M12.1651 4.03432C12.0203 3.88832 11.7853 3.88826 11.6404 4.03437C11.4955 4.18042 11.4955 4.41723 11.6404 4.56333C12.2848 5.21289 12.6396 6.07801 12.6396 6.99943C12.6396 7.92084 12.2848 8.78596 11.6404 9.43552C11.4955 9.58162 11.4955 9.81842 11.6404 9.96448C11.7129 10.0375 11.8078 10.0741 11.9028 10.0741C11.9977 10.0741 12.0927 10.0375 12.1651 9.96453C12.9496 9.17367 13.3817 8.12065 13.3817 6.99943C13.3817 5.8782 12.9496 4.82519 12.1651 4.03432Z" fill="currentColor"/>
+            <path d="M9.40909 0.0603026C9.20504 -0.0396761 8.96751 -0.0139545 8.78915 0.127196L4.5934 3.45119L4.38994 3.61238V6.99429C4.38994 7.20824 4.21789 7.38169 4.00566 7.38169C3.79344 7.38169 3.62139 7.20824 3.62139 6.99429V3.62231H1.05146C0.471695 3.62231 0 4.09784 0 4.68233V9.3176C0 9.90214 0.471695 10.3777 1.05146 10.3777H3.95735H4.37739L4.59339 10.5488L7.27858 12.676V10.051C7.27858 9.83708 7.45063 9.66364 7.66285 9.66364C7.87508 9.66364 8.04712 9.83708 8.04712 10.051V13.2849L8.78909 13.8727C8.89536 13.9568 9.02259 14 9.15127 14C9.23859 14 9.32658 13.9801 9.40904 13.9397C9.61307 13.8398 9.73984 13.6356 9.73984 13.4069V0.593075C9.73984 0.36442 9.61313 0.16023 9.40909 0.0603026Z" fill="currentColor"/>
+          </g>
+          <line x1="15" y1="0.707595" x2="1.70711" y2="14.0005" stroke="currentColor" stroke-opacity="0.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- Let's talk CTA -->
+      <button type="button" class="nav-cta-btn" aria-label="Open contact form">let's talk</button>
+
+      <!-- Desktop menu toggle -->
+      <button type="button" class="main-toggle" aria-expanded="false" aria-controls="desktopMenuRef" aria-label="Open navigation menu">
+        <span>Menu</span>
+        <div class="main__hamburger" aria-hidden="true">
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+
+      <!-- Mobile hamburger -->
+      <button type="button" class="menu-toggle-mobile" aria-label="Open mobile navigation" aria-expanded="false">
+        <div class="nav__hamburger">
+          <svg viewBox="0 0 40 40" width="24" height="28" aria-hidden="true">
+            <path d="M0 16 H40" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+            <path d="M0 25 H40" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════
+     MAIN PAGE CONTENT
+═══════════════════════════════════════════════════ -->
+<main class="relative" style="opacity:0;visibility:hidden;">
+
+  <!-- ─── HERO SECTION ─── -->
+  <div id="hero-section">
+    <div id="sticky-wrap">
+      <section class="main-banner">
+        <div class="tr__container banner-inner">
+
+          <!-- Top block: headline + CTA -->
+          <div class="banner-top-block">
+            <!-- Headline -->
+            <div class="banner-title-block" id="s1-headline" style="margin-bottom:2.5rem;">
+              <h1 style="visibility:hidden;">Designed to</h1>
+              <h1>
+                <span style="display:inline-block;visibility:hidden;">mean</span>
+                <span style="display:inline-block;">something.</span>
+              </h1>
+            </div>
+
+            <!-- CTAs -->
+            <div id="s1-cta" style="visibility:hidden;will-change:filter,opacity;">
+              <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+                <!-- Discuss project button -->
+                <div class="button_wrapper" style="--button_wrapper-color:#D8D8D8;--out-time:200ms;--in-time:320ms;--arrow-size:2.5rem;--pad-x:0px;min-width:15.75rem;">
+                  <button type="button" class="btn" aria-label="Discuss Your Project — open the inquiry form" data-open-contact>
+                    <span class="underline"><span class="u-right" style="background-color:#D8D8D8;"></span><span class="u-left" style="background-color:#D8D8D8;"></span></span>
+                    <span class="word" style="color:#D8D8D8;">Discuss Your Project</span>
+                    <span class="arrow arrow-right" style="width:var(--arrow-size);height:var(--arrow-size);" aria-hidden="true">
+                      <span class="arrow-sprite" style="justify-content:flex-end;">
+                        <svg width="10" height="9" viewBox="0 0 10 9" fill="none"><path d="M5.47372 8.652V6.552L8.32972 3.752V4.9L5.47372 2.1V-3.09944e-06L9.32372 3.836V4.816L5.47372 8.652ZM-0.000281237 5.11V3.542H8.60972V5.11H-0.000281237Z" fill="#D8D8D8"/></svg>
+                      </span>
+                    </span>
+                  </button>
+                </div>
+
+                <!-- Book a call button -->
+                <div class="button_wrapper" style="--button_wrapper-color:#D8D8D8;--out-time:200ms;--in-time:320ms;--arrow-size:2.5rem;--pad-x:0px;min-width:15.75rem;">
+                  <a href="https://calendly.com/hello-trionn/30min" target="_blank" class="btn">
+                    <span class="underline"><span class="u-right" style="background-color:#D8D8D8;"></span><span class="u-left" style="background-color:#D8D8D8;"></span></span>
+                    <span class="word" style="color:#D8D8D8;">Book a 30-minute call</span>
+                    <span class="arrow arrow-right" style="width:var(--arrow-size);height:var(--arrow-size);" aria-hidden="true">
+                      <span class="arrow-sprite" style="justify-content:flex-end;">
+                        <svg width="10" height="9" viewBox="0 0 10 9" fill="none"><path d="M5.47372 8.652V6.552L8.32972 3.752V4.9L5.47372 2.1V-3.09944e-06L9.32372 3.836V4.816L5.47372 8.652ZM-0.000281237 5.11V3.542H8.60972V5.11H-0.000281237Z" fill="#D8D8D8"/></svg>
+                      </span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom block: scroll, easter egg, badge + sub -->
+          <div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1.5rem;width:100%;">
+
+            <!-- Scroll indicator (left) -->
+            <div id="s1-scroll" class="banner-scroll" style="grid-column:span 4;">
+              <div class="scroll-inner selective-transition">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" class="scroll-arrow" aria-hidden="true">
+                  <circle cx="9" cy="9" r="8.5" stroke="currentColor"/>
+                  <path d="M8.64645 12.3536C8.84171 12.5488 9.15829 12.5488 9.35355 12.3536L12.5355 9.17157C12.7308 8.97631 12.7308 8.65973 12.5355 8.46447C12.3403 8.2692 12.0237 8.2692 11.8284 8.46447L9 11.2929L6.17157 8.46447C5.97631 8.2692 5.65973 8.2692 5.46447 8.46447C5.2692 8.65973 5.2692 8.97631 5.46447 9.17157L8.64645 12.3536ZM9 5L8.5 5L8.5 12L9 12L9.5 12L9.5 5L9 5Z" fill="currentColor"/>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Easter egg label (center, desktop only) -->
+            <div id="s1-stats" style="grid-column:span 12;display:none;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;" class="blast-label">
+              <span class="title" style="visibility:hidden;color:var(--color-light-font);">hold to&nbsp;⚡&nbsp;blast</span>
+              <span class="title" style="visibility:hidden;color:var(--color-light-font);display:block;margin-top:-0.375rem;">Dare ⚡ to touch the lines.</span>
+            </div>
+
+            <!-- Badge + sub (right) -->
+            <div style="grid-column:span 8;grid-column-start:5;display:flex;justify-content:flex-end;">
+              <div style="display:flex;flex-direction:column;max-width:16.25rem;gap:1.5rem;width:100%;">
+
+                <!-- Est. 2012 badge -->
+                <div id="s1-box">
+                  <div class="hero-est-badge">
+                    <div class="hero-est-badge-left">
+                      <!-- Trionn globe icon -->
+                      <svg width="43" height="27" viewBox="0 0 43 27" fill="none" aria-label="Globe icon">
+                        <mask id="globe-mask" fill="white">
+                          <path d="M22.0098 0.00488281C33.425 0.18638 42.5948 5.94967 42.9004 13.1299C42.964 13.2463 43 13.3704 43 13.5C42.9856 13.5991 42.9515 13.6943 42.9033 13.7861C42.6622 21.1215 33.1713 26.9999 21.4551 27C9.58671 27 0 20.9681 0 13.5C7.01302e-06 6.03191 9.58672 0 21.4551 0L22.0098 0.00488281ZM15.2822 14.6484C15.6586 20.8749 19.0438 24.7598 21.4551 24.7598C23.8663 24.7596 27.2505 20.8747 27.627 14.6484H15.2822ZM3.65332 14.6484C4.35225 18.9618 8.94408 22.5637 15.1729 24.04C13.1002 21.666 11.9316 18.1611 11.7217 14.6484H3.65332ZM31.1875 14.6484C30.9775 18.1613 29.8092 21.666 27.7363 24.04C33.9652 22.5638 38.5569 18.9618 39.2559 14.6484H31.1875ZM15.1729 2.95898C8.94443 4.43513 4.35279 8.03764 3.65332 12.3506H11.7217C11.9318 8.83797 13.1 5.33279 15.1729 2.95898ZM21.4551 2.24023C19.044 2.24023 15.6589 6.12472 15.2822 12.3506H27.627C27.2502 6.12487 23.8662 2.24039 21.4551 2.24023ZM27.7363 2.95898C29.8093 5.33278 30.9773 8.83781 31.1875 12.3506H39.2559C38.5564 8.03762 33.9648 4.43511 27.7363 2.95898Z"/>
+                        </mask>
+                        <path d="M22.0098 0.00488281C33.425 0.18638 42.5948 5.94967 42.9004 13.1299C42.964 13.2463 43 13.3704 43 13.5C42.9856 13.5991 42.9515 13.6943 42.9033 13.7861C42.6622 21.1215 33.1713 26.9999 21.4551 27C9.58671 27 0 20.9681 0 13.5C7.01302e-06 6.03191 9.58672 0 21.4551 0L22.0098 0.00488281Z" fill="#D8D8D8" mask="url(#globe-mask)"/>
+                      </svg>
+                      <span class="title" style="color:var(--color-light-font);">Est. 2012</span>
+                    </div>
+                    <div class="hero-est-badge-right">
+                      <span class="title" style="color:var(--color-light-font);">14+ years shaping<br/>digital direction.</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Sub text -->
+                <div id="s1-sub">
+                  <p style="color:var(--color-light-font);font-size:0.875rem;text-align:justify;">Websites, AI products, brands, and systems built for clarity, scale and impact.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ─── ABOUT SECTION ─── -->
+      <section class="home-about" id="s2-text">
+        <div class="tr__container">
+
+          <!-- Top: ghost text + section label -->
+          <div class="about-title-block">
+            <div style="grid-column:span 12;position:relative;">
+              <span class="title about-section-label" style="visibility:hidden;display:block;margin-bottom:1rem;color:rgba(216,216,216,0.5);">about</span>
+            </div>
+            <div style="grid-column:span 12;position:relative;overflow:hidden;">
+              <!-- Ghost (dim) version -->
+              <h2 class="about-ghost-text" aria-hidden="true">
+                <span style="width:8.333%;display:inline-block;"></span>
+                <span style="padding-left:0.75rem;">Trionn is an independent digital studio crafting meaningful brand experiences through strategy, design, and technology.</span>
+              </h2>
+              <!-- Revealed version (clip-path driven by scroll) -->
+              <h2 class="about-revealed-text" style="color:var(--color-light-font);clip-path:inset(0% 100% 0% 0%);transition:none;">
+                <span style="width:8.333%;display:inline-block;"></span>
+                <span style="padding-left:0.75rem;">Trionn is an independent digital studio crafting meaningful brand experiences through strategy, design, and technology.</span>
+              </h2>
+            </div>
+          </div>
+
+          <!-- Decorative line + plus -->
+          <div class="line-plus-block" style="position:relative;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1.5rem;margin-top:5rem;margin-bottom:5rem;">
+            <div class="deco-line" style="background:#2F323B;"></div>
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true" style="grid-column:9;transform:translateX(-50%);width:1rem;height:1rem;">
+              <line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#D8D8D8" stroke-width="1"/>
+              <line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#D8D8D8" stroke-width="1"/>
+            </svg>
+          </div>
+
+          <!-- Bottom: tagline + body + CTA -->
+          <div class="about-subtitle-block">
+            <!-- Left tagline -->
+            <div class="about-tagline">
+              <span class="title about-section-tagline" style="color:var(--color-light-font);visibility:hidden;display:block;line-height:1.4;">We design for longevity clarity first, craft always, built to scale.</span>
+            </div>
+
+            <!-- Right body -->
+            <div class="about-body-col">
+              <p>Our mission is to make technology feel human by designing digital products that are intuitive, purposeful, and meaningful to people.</p>
+
+              <!-- More about us link -->
+              <div class="button_wrapper" style="--button_wrapper-color:#D8D8D8;--out-time:200ms;--in-time:320ms;--arrow-size:2.5rem;--pad-x:0px;">
+                <a href="/about" class="btn">
+                  <span class="underline"><span class="u-right" style="background-color:#D8D8D8;"></span><span class="u-left" style="background-color:#D8D8D8;"></span></span>
+                  <span class="word" style="color:#D8D8D8;">more about us</span>
+                  <span class="arrow arrow-right" style="width:var(--arrow-size);height:var(--arrow-size);" aria-hidden="true">
+                    <span class="arrow-sprite" style="justify-content:flex-end;">
+                      <svg width="10" height="9" viewBox="0 0 10 9" fill="none"><path d="M5.47372 8.652V6.552L8.32972 3.752V4.9L5.47372 2.1V-3.09944e-06L9.32372 3.836V4.816L5.47372 8.652ZM-0.000281237 5.11V3.542H8.60972V5.11H-0.000281237Z" fill="#D8D8D8"/></svg>
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div><!-- /sticky-wrap -->
+  </div><!-- /hero-section -->
+
+  <!-- ─── VISION SECTION ─── -->
+  <section id="vision-section">
+    <div class="vision-text-wrap" id="s3-text">
+
+      <!-- Headline -->
+      <div class="tr__container" style="width:100%;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1.5rem;">
+        <span class="h2 vision-headline" style="grid-column:span 12;visibility:hidden;color:var(--color-light-font);">
+          Focused vision. <br/>Measured execution.
+        </span>
+      </div>
+
+      <!-- Marquee -->
+      <div style="position:relative;z-index:3;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;pointer-events:none;padding-block:5rem;width:100%;overflow:hidden;">
+        <div class="marquee-wrapper">
+          <div class="marquee-track" style="display:flex;white-space:nowrap;">
+            <div class="marquee-inner" style="display:flex;align-items:center;flex-shrink:0;">
+              <span class="marquee-text-item">Inspire</span>
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true" style="margin-inline:2.5rem;flex-shrink:0;width:1.5rem;height:1.5rem;">
+                <line x1="20.2256" y1="0" x2="20.2256" y2="40" stroke="#D8D8D8"/>
+                <line x1="40" y1="20.226" x2="0" y2="20.226" stroke="#D8D8D8"/>
+              </svg>
+              <span class="marquee-text-item">innovate</span>
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true" style="margin-inline:2.5rem;flex-shrink:0;width:1.5rem;height:1.5rem;">
+                <line x1="20.2256" y1="0" x2="20.2256" y2="40" stroke="#D8D8D8"/>
+                <line x1="40" y1="20.226" x2="0" y2="20.226" stroke="#D8D8D8"/>
+              </svg>
+              <span class="marquee-text-item">Impact</span>
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true" style="margin-inline:2.5rem;flex-shrink:0;width:1.5rem;height:1.5rem;">
+                <line x1="20.2256" y1="0" x2="20.2256" y2="40" stroke="#D8D8D8"/>
+                <line x1="40" y1="20.226" x2="0" y2="20.226" stroke="#D8D8D8"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tagline -->
+      <div class="tr__container" style="width:100%;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:1.5rem;padding-bottom:2.5rem;">
+        <span class="title vision-tagline" style="grid-column:span 12;text-align:center;visibility:hidden;color:var(--color-light-font);">✦ From idea to outcome.</span>
+      </div>
+    </div>
+
+    <!-- Stripe overlay (scroll-triggered wipe) -->
+    <div class="stripes-container" aria-hidden="true">
+      <div class="stripe-item"></div>
+      <div class="stripe-item"></div>
+      <div class="stripe-item"></div>
+      <div class="stripe-item"></div>
+      <div class="stripe-item"></div>
+    </div>
+  </section>
+
+  <!-- ─── KEY FACTS SECTION ─── -->
+  <section id="keyfacts-section">
+    <div>
+      <div class="tr__container">
+
+        <!-- Title -->
+        <div class="kf-title-block">
+          <h2 class="kf-headline" style="color:var(--color-dark-font);visibility:hidden;">Key facts</h2>
+          <p class="kf-subtitle small">A snapshot of our <br/>experience and impact.</p>
+        </div>
+
+        <!-- Cards -->
+        <div class="key-card-list">
+
+          <!-- Awards card -->
+          <div data-kf-card="true" class="kf-card featured-card">
+            <video autoplay src="video/awards-card-video.mp4" muted playsinline loop preload="auto" style="display:none;" class="desktop-video"></video>
+            <video autoplay src="video/awards-card-video_m.mp4" muted playsinline loop preload="auto" class="mobile-video"></video>
+            <div class="card-inner">
+              <span class="title" style="color:var(--color-light-font);display:block;">Featured &amp; Awards</span>
+              <div>
+                <!-- Cycling award logos -->
+                <div class="awards-logo-list" style="margin-bottom:0.5rem;">
+                  <img src="images/awwwards.svg" alt="Awwwards" loading="lazy"/>
+                  <img src="images/ccda.svg" alt="CCDA" loading="lazy"/>
+                  <img src="images/thefwa.svg" alt="The FWA" loading="lazy"/>
+                  <img src="images/csswinner.svg" alt="CSS Winner" loading="lazy"/>
+                  <img src="images/adesignaward.svg" alt="A Design Award" loading="lazy"/>
+                  <img src="images/gsap.svg" alt="GSAP" loading="lazy"/>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;gap:1.5rem;">
+                  <p class="small" style="opacity:0.8;width:75%;color:var(--color-light-font);">Featured on top design platforms worldwide.</p>
+                  <span class="card-stat" style="color:var(--color-light-font);">
+                    <span class="card-stat-value">50</span>
+                    <span class="card-stat-plus">+</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projects card -->
+          <div data-kf-card="true" class="kf-card project-card" style="position:relative;">
+            <span class="title" style="display:block;color:var(--color-dark-font);">projects completed</span>
+            <div class="project-card-content">
+              <div class="project-card-circle"></div>
+              <div style="position:relative;z-index:2;display:flex;align-items:center;">
+                <span class="card-stat" style="color:var(--color-dark-font);">
+                  <span class="card-stat-value">1.5K</span>
+                  <span class="card-stat-plus">+</span>
+                </span>
+              </div>
+            </div>
+            <p class="small" style="opacity:0.8;color:var(--color-dark-font);">90% of our clients seek our <br/>services for a second project.</p>
+          </div>
+
+          <!-- Team card -->
+          <div data-kf-card="true" class="kf-card team-card">
+            <div class="card-inner" style="height:100%;">
+              <span class="title" style="display:block;text-align:right;color:var(--color-light-font);">our team members</span>
+              <div class="team-video" style="flex:1;margin-block:1rem;">
+                <video src="video/team/rushi.mp4#t=0.1" muted playsinline preload="auto" style="display:none;" class="desktop-video"></video>
+                <video src="video/team/rushi_m.mp4#t=0.1" muted playsinline preload="auto" class="mobile-video"></video>
+              </div>
+              <div style="display:flex;align-items:flex-end;justify-content:space-between;">
+                <p class="small" style="color:rgba(216,216,216,0.6);">Different skills. <br/>One standard.</p>
+                <span class="card-stat" style="color:var(--color-light-font);">
+                  <span class="card-stat-value">20</span>
+                  <span class="card-stat-plus">+</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /key-card-list -->
+
+        <!-- Partners -->
+        <div class="partners-block">
+          <span class="title" style="color:black;text-align:center;display:block;visibility:hidden;">Our business partners</span>
+          <div class="partners-list">
+            <div class="partner-item"><img src="images/partner1.svg" alt="Partner 1" loading="lazy" width="88" height="40" style="width:5.5rem;height:auto;"/></div>
+            <div class="partner-item"><img src="images/partner2.svg" alt="Partner 2" loading="lazy" width="108" height="40" style="width:6.75rem;height:auto;"/></div>
+            <div class="partner-item"><img src="images/partner3.svg" alt="Partner 3" loading="lazy" width="104" height="40" style="width:6.5rem;height:auto;"/></div>
+            <div class="partner-item"><img src="images/partner4.svg" alt="Partner 4" loading="lazy" width="108" height="40" style="width:6.75rem;height:auto;"/></div>
+            <div class="partner-item"><img src="images/partner5.svg" alt="Partner 5" loading="lazy" width="90" height="40" style="width:5.625rem;height:auto;"/></div>
+          </div>
+        </div>
+
+      </div><!-- /tr__container -->
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════════════
+     CONTACT POPUP
+═══════════════════════════════════════════════════ -->
+<div role="dialog" aria-modal="true" aria-label="Contact TRIONN" aria-hidden="true" class="contact-popup-wrapper">
+  <div class="contact-popup-backdrop"></div>
+  <div class="contact-popup-panel no-scrollbar" data-lenis-prevent="true">
+
+    <button type="button" class="popup-close" aria-label="Close contact form">
+      <svg viewBox="0 0 24 24" style="width:0.625rem;height:0.625rem;" aria-hidden="true">
+        <path d="M4 4 L20 20 M20 4 L4 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <div class="contact-popup-inner">
+      <div>
+        <!-- Header -->
+        <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem;">
+          <h2 style="font-family:var(--font-heading);font-size:1.5rem;font-weight:400;letter-spacing:-0.02em;line-height:1.1;">Let's build something great.</h2>
+          <p class="small" style="max-width:18.5rem;color:rgba(67,67,67,0.7);">Tell us about your project, we usually reply within one business day.</p>
+        </div>
+
+        <!-- Form -->
+        <form class="contact-form" novalidate style="margin-bottom:2rem;">
+          <div class="form-field">
+            <input type="text" placeholder="Full Name" aria-label="Full Name *" required/>
+          </div>
+          <div class="form-field">
+            <input type="email" placeholder="Email address" aria-label="Email Address *" required/>
+          </div>
+          <div class="form-field">
+            <input type="text" placeholder="Company / Website name" aria-label="Company / Website"/>
+          </div>
+
+          <!-- Service select -->
+          <div class="form-field form-select-group" style="position:relative;">
+            <button type="button" class="form-select-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Service *">
+              <span class="select-label" style="color:rgba(67,67,67,0.6);">Select a service</span>
+              <span class="select-chevron" style="flex-shrink:0;transition:transform 0.3s;">
+                <svg width="9" height="10" viewBox="0 0 9 10" fill="none" aria-hidden="true"><path d="M0 5.47422L2.1 5.47422L4.9 8.33022L3.752 8.33022L6.552 5.47422H8.652L4.816 9.32422L3.836 9.32422L0 5.47422ZM3.542 0.000218391H5.11V8.61022L3.542 8.61022L3.542 0.000218391Z" fill="currentColor"/></svg>
+              </span>
+            </button>
+            <div class="select-dropdown" role="listbox">
+              <button type="button" class="select-option" role="option" aria-selected="false">Website Design &amp; Development</button>
+              <button type="button" class="select-option" role="option" aria-selected="false">UI/UX Design</button>
+              <button type="button" class="select-option" role="option" aria-selected="false">Web Development</button>
+              <button type="button" class="select-option" role="option" aria-selected="false">Mobile App Design</button>
+              <button type="button" class="select-option" role="option" aria-selected="false">Branding &amp; Identity</button>
+              <button type="button" class="select-option" role="option" aria-selected="false">AI-Powered Digital Product</button>
+              <button type="button" class="select-option" role="option" aria-selected="false">Something Else</button>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <textarea maxlength="800" rows="4" placeholder="Share a little about your goals, timeline, and requirements..." aria-label="Project brief"></textarea>
+          </div>
+
+          <!-- Budget select -->
+          <div class="form-field form-select-group" style="position:relative;">
+            <button type="button" class="form-select-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Budget *">
+              <span class="select-label" style="color:rgba(67,67,67,0.6);">Select your estimated budget</span>
+              <span class="select-chevron" style="flex-shrink:0;transition:transform 0.3s;">
+                <svg width="9" height="10" viewBox="0 0 9 10" fill="none" aria-hidden="true"><path d="M0 5.47422L2.1 5.47422L4.9 8.33022L3.752 8.33022L6.552 5.47422H8.652L4.816 9.32422L3.836 9.32422L0 5.47422ZM3.542 0.000218391H5.11V8.61022L3.542 8.61022L3.542 0.000218391Z" fill="currentColor"/></svg>
+              </span>
+            </button>
+            <div class="select-dropdown" role="listbox">
+              <button type="button" class="select-option" role="option" aria-selected="false">$5K - $15K</button>
+              <button type="button" class="select-option" role="option" aria-selected="false">$15K - $30K</button>
+              <button type="button" class="select-option" role="option" aria-selected="false">$30K - $60K</button>
+              <button type="button" class="select-option" role="option" aria-selected="false">$60K+</button>
+              <button type="button" class="select-option" role="option" aria-selected="false">Not sure yet</button>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="form-submit-btn">
+            <div class="button_wrapper" style="--button_wrapper-color:#272727;--out-time:200ms;--in-time:320ms;--arrow-size:2.5rem;--pad-x:0px;width:100%;">
+              <button type="submit" class="btn" style="text-transform:uppercase;">
+                <span class="underline"><span class="u-right" style="background-color:#272727;"></span><span class="u-left" style="background-color:#272727;"></span></span>
+                <span class="word" style="color:#272727;">Send Inquiry</span>
+                <span class="arrow arrow-right" style="width:var(--arrow-size);height:var(--arrow-size);" aria-hidden="true">
+                  <span class="arrow-sprite" style="justify-content:flex-end;">
+                    <svg width="10" height="9" viewBox="0 0 10 9" fill="none"><path d="M5.47372 8.652V6.552L8.32972 3.752V4.9L5.47372 2.1V-3.09944e-06L9.32372 3.836V4.816L5.47372 8.652ZM-0.000281237 5.11V3.542H8.60972V5.11H-0.000281237Z" fill="#272727"/></svg>
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- "or" divider + Calendly -->
+      <div>
+        <div class="or-divider">
+          <span class="line"></span>
+          <span class="text">or</span>
+          <span class="line"></span>
+        </div>
+
+        <a href="https://calendly.com/hello-trionn/30min" target="_blank" rel="noopener noreferrer" class="calendly-btn">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M18.6667 4.38667C18.6657 3.5524 18.3339 2.75257 17.744 2.16265C17.1541 1.57274 16.3543 1.24092 15.52 1.24H14.9524V0.666667C14.9524 0.489856 14.8822 0.320286 14.7571 0.195262C14.6321 0.0702379 14.4625 0 14.2857 0C14.1089 0 13.9394 0.0702379 13.8143 0.195262C13.6893 0.320286 13.6191 0.489856 13.6191 0.666667V1.24H5.04813V0.666667C5.04813 0.489856 4.9779 0.320286 4.85287 0.195262C4.72785 0.0702379 4.55828 0 4.38147 0C4.20466 0 4.03509 0.0702379 3.91006 0.195262C3.78504 0.320286 3.7148 0.489856 3.7148 0.666667V1.24H3.14667C2.3124 1.24092 1.51257 1.57274 0.922651 2.16265C0.332735 2.75257 0.000917591 3.5524 0 4.38667V15.52C0.000917591 16.3543 0.332735 17.1541 0.922651 17.744C1.51257 18.3339 2.3124 18.6657 3.14667 18.6667H10.2753C11.3281 19.5237 12.6426 19.9942 14 20C15.5908 19.9982 17.1159 19.3655 18.2407 18.2407C19.3655 17.1159 19.9982 15.5908 20 14C19.9942 12.6426 19.5237 11.3281 18.6667 10.2753V4.38667Z" fill="currentColor"/>
+          </svg>
+          Book a 30-minute call
+        </a>
+
+        <p class="popup-email-note">
+          Prefer email? <a href="mailto:hello@trionn.com">hello@trionn.com</a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "TRIONN",
+  "url": "https://trionn.com/",
+  "logo": "https://trionn.com/images/logo.png",
+  "description": "TRIONN is an independent AI-powered digital studio crafting meaningful brand experiences through strategy, design, and technology.",
+  "founder": { "@type": "Person", "name": "Sunny Rathod" },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "216-4Plus Complex, Astron Chowk",
+    "addressLocality": "Rajkot",
+    "addressRegion": "Gujarat",
+    "addressCountry": "India"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/trionnstudio",
+    "https://www.instagram.com/trionnstudio"
+  ]
+}
+</script>
+
+<!-- ─── Scripts (order matters) ─── -->
+<script src="js/preloader.js" defer></script>
+<script src="js/nav.js" defer></script>
+<script src="js/animations.js" defer></script>
+<script src="js/cards.js" defer></script>
+<script src="js/contact.js" defer></script>
+
+<!-- Video responsive: show desktop/mobile based on viewport -->
+<script>
+  (function() {
+    function applyVideoSources() {
+      const isMobile = window.innerWidth < 768;
+      document.querySelectorAll('.desktop-video').forEach(v => {
+        v.style.display = isMobile ? 'none' : 'block';
+      });
+      document.querySelectorAll('.mobile-video').forEach(v => {
+        v.style.display = isMobile ? 'block' : 'none';
+      });
+    }
+    applyVideoSources();
+    window.addEventListener('resize', applyVideoSources);
+
+    // Show s1-stats on desktop
+    const s1stats = document.getElementById('s1-stats');
+    if (s1stats && window.innerWidth >= 1024) {
+      s1stats.style.display = 'flex';
+    }
+  })();
+</script>
+
+</body>
+</html>

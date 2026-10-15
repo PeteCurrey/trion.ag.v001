@@ -1,0 +1,241 @@
+/* ============================================================
+   PRELOADER.CSS — Page load overlay animation
+   ============================================================ */
+
+/* ── White flash overlay (very brief) ── */
+.pl-white-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9050;
+  background: #C8C8C8;
+  pointer-events: none;
+  opacity: 1;
+}
+
+/* ── Main preloader overlay (10 belt strips) ── */
+.pl-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9100;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  visibility: hidden;
+}
+.pl-overlay.active {
+  pointer-events: all;
+  visibility: visible;
+}
+
+.pl-belt {
+  background: #C8C8C8;
+  flex: 1;
+  width: 100%;
+  margin-bottom: -1px;
+  padding-bottom: 1px;
+  transform: scaleY(0);
+  transform-origin: 50%;
+  will-change: transform;
+  background-clip: padding-box;
+}
+.pl-belt:last-child { margin-bottom: 0; }
+
+/* ── Transition overlay (exit animation) ── */
+.pl-trans-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9200;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  visibility: hidden;
+}
+.pl-trans-overlay.active {
+  pointer-events: all;
+  visibility: visible;
+}
+
+/* ── Flying plus signs ── */
+.pl-flying-plus {
+  position: fixed;
+  z-index: 9500;
+  width: 0.813rem;
+  height: 0.813rem;
+  pointer-events: none;
+  will-change: left, top, opacity, transform;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.pl-flying-plus svg { display: block; }
+
+/* ── Center overlay content (logo + tagline) ── */
+.pl-overlay-center {
+  position: fixed;
+  inset: 0;
+  z-index: 9350;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  visibility: hidden;
+  perspective: 800px;
+  contain: layout paint;
+}
+
+.pl-trans-center {
+  position: fixed;
+  inset: 0;
+  z-index: 9250;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  visibility: hidden;
+  perspective: 800px;
+}
+
+/* ── Logo wrap ── */
+.pl-overlay-logo-wrap {
+  position: relative;
+  width: clamp(10rem, 22vw, 17.5rem);
+  height: clamp(10.25rem, 22.3vw, 17.75rem);
+}
+
+.pl-logo-black-box {
+  position: absolute;
+  inset: 0;
+  background: #C8C8C8;
+  z-index: 0;
+  opacity: 0;
+  will-change: transform, opacity;
+  border: 1.5px solid rgba(0,0,0,0.06);
+  border-radius: 2px;
+}
+
+/* Corner plus decorators */
+.pl-logo-corner-plus {
+  position: absolute;
+  z-index: 10;
+  will-change: transform, opacity;
+  width: 0.813rem;
+  height: 0.813rem;
+}
+.pl-logo-corner-plus svg {
+  width: 0.813rem;
+  height: 0.813rem;
+  position: static;
+}
+.pl-logo-corner-plus.tl { top: calc(-6px - 6.5px); left: calc(-6px - 6.5px); }
+.pl-logo-corner-plus.tr { top: calc(-6px - 6.5px); right: calc(-6px - 6.5px); }
+.pl-logo-corner-plus.bl { bottom: calc(-6px - 6.5px); left: calc(-6px - 6.5px); }
+.pl-logo-corner-plus.br { bottom: calc(-6px - 6.5px); right: calc(-6px - 6.5px); }
+
+/* ── Border SVG (animated stroke) ── */
+.pl-border-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  overflow: visible;
+}
+
+/* ── T-path (animated logo paths) ── */
+.pl-t-path {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 500;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* ── Page label ── */
+.pl-overlay-page-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  color: var(--pl-black, #000);
+  opacity: 0;
+  white-space: nowrap;
+  z-index: 600;
+}
+
+/* ── Counter ── */
+.pl-overlay-counter {
+  position: fixed;
+  bottom: 5rem;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 9400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  opacity: 0;
+}
+
+.pl-slot-reel {
+  width: 0.75rem;
+  height: 0.938rem;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.pl-slot-strip {
+  display: block;
+  will-change: transform;
+}
+
+.pl-slot-digit {
+  display: block;
+  height: 1rem;
+  color: #434343;
+  font-size: 1rem;
+  line-height: 1rem;
+  letter-spacing: 0;
+  text-align: center;
+  font-family: 'Martian Mono', monospace;
+}
+
+/* ── Tagline (Inspire · Innovate · Impact) ── */
+.pl-overlay-tagline {
+  display: flex;
+  align-items: center;
+  gap: 0.063rem;
+  margin-top: 2.5rem;
+  opacity: 1;
+}
+
+.pl-tag-word {
+  text-transform: uppercase;
+  font-family: 'Martian Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: #111;
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(6px);
+}
+.pl-tag-word.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pl-tag-dot {
+  color: rgba(0,0,0,0.3);
+  opacity: 0;
+  margin: 0 0.5rem;
+  font-size: 1.125rem;
+  transition: opacity 0.4s 0.15s;
+}
+.pl-tag-dot.visible { opacity: 1; }
