@@ -38,6 +38,8 @@
   <!-- GSAP + ScrollTrigger -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Three.js (WebGL 3D engine) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <!-- Lenis smooth scroll -->
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
 
@@ -304,6 +306,9 @@
 
   <!-- ─── HERO SECTION ─── -->
   <div id="hero-section">
+    <!-- Three.js 3D Interactive Extruded TRIONN Symbol -->
+    <div id="trionn-symbol-canvas-wrap"></div>
+
     <div id="sticky-wrap">
       <section class="main-banner">
         <div class="tr__container banner-inner">
@@ -314,8 +319,10 @@
             <div class="banner-title-block" id="s1-headline" style="margin-bottom:2.5rem;">
               <h1 style="visibility:hidden;">Designed to</h1>
               <h1>
-                <span style="display:inline-block;visibility:hidden;">mean</span>
-                <span style="display:inline-block;">something.</span>
+                <span id="s1-mean" style="display:inline-block;visibility:hidden;margin-right:0.3em;">mean</span>
+                <span class="cycling-word-wrapper">
+                  <span class="cycling-word" style="visibility:hidden;">something.</span>
+                </span>
               </h1>
             </div>
 
@@ -467,6 +474,175 @@
 
     </div><!-- /sticky-wrap -->
   </div><!-- /hero-section -->
+
+  <!-- ─── SELECTED WORK SECTION (Horizontal Pin Scroll) ─── -->
+  <section id="work-section">
+    <div class="tr__container">
+      <div class="work-header">
+        <div>
+          <span class="work-header-subtitle">Selected Work</span>
+          <h2 class="work-header-title">Featured Projects</h2>
+        </div>
+        <div class="button_wrapper" style="--button_wrapper-color:#D8D8D8;--out-time:200ms;--in-time:320ms;--arrow-size:2.5rem;--pad-x:0px;">
+          <a href="/work" class="btn">
+            <span class="underline"><span class="u-right" style="background-color:#D8D8D8;"></span><span class="u-left" style="background-color:#D8D8D8;"></span></span>
+            <span class="word" style="color:#D8D8D8;">view all work</span>
+            <span class="arrow arrow-right" style="width:var(--arrow-size);height:var(--arrow-size);" aria-hidden="true">
+              <span class="arrow-sprite" style="justify-content:flex-end;">
+                <svg width="10" height="9" viewBox="0 0 10 9" fill="none"><path d="M5.47372 8.652V6.552L8.32972 3.752V4.9L5.47372 2.1V-3.09944e-06L9.32372 3.836V4.816L5.47372 8.652ZM-0.000281237 5.11V3.542H8.60972V5.11H-0.000281237Z" fill="#D8D8D8"/></svg>
+              </span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="work-track-wrapper">
+      <div class="work-track" id="work-track">
+
+        <!-- Project 1: Loftloom -->
+        <article class="work-card">
+          <div class="work-card-media">
+            <img src="images/projects/loftloom/loftloom.jpg" alt="Loftloom Architectural Studio" loading="lazy"/>
+          </div>
+          <div>
+            <div class="work-card-tags">
+              <span class="work-tag">UI/UX Design</span>
+              <span class="work-tag">Branding</span>
+              <span class="work-tag">Development</span>
+            </div>
+            <h3 class="work-card-title">Loftloom</h3>
+            <p class="work-card-desc">Bespoke digital architecture and spatial storytelling showcasing high-end interior spaces.</p>
+          </div>
+          <div class="work-card-line"></div>
+        </article>
+
+        <!-- Project 2: Pulse Studio -->
+        <article class="work-card">
+          <div class="work-card-media">
+            <img src="images/projects/pulse-studio/pulse-studio.jpg" alt="Pulse Studio Sound Platform" loading="lazy"/>
+          </div>
+          <div>
+            <div class="work-card-tags">
+              <span class="work-tag">Creative Dev</span>
+              <span class="work-tag">Three.js</span>
+              <span class="work-tag">Sound Platform</span>
+            </div>
+            <h3 class="work-card-title">Pulse Studio</h3>
+            <p class="work-card-desc">Next-generation sound production identity platform with responsive spatial visuals.</p>
+          </div>
+          <div class="work-card-line"></div>
+        </article>
+
+        <!-- Project 3: Aether AI -->
+        <article class="work-card">
+          <div class="work-card-media">
+            <video autoplay muted loop playsinline class="desktop-video" src="video/awards-card-video.mp4"></video>
+            <video autoplay muted loop playsinline class="mobile-video" src="video/awards-card-video_m.mp4"></video>
+          </div>
+          <div>
+            <div class="work-card-tags">
+              <span class="work-tag">Generative UI</span>
+              <span class="work-tag">AI Product</span>
+              <span class="work-tag">System Design</span>
+            </div>
+            <h3 class="work-card-title">Aether AI</h3>
+            <p class="work-card-desc">Multimodal intelligence suite tailored for enterprise creative workflow automation.</p>
+          </div>
+          <div class="work-card-line"></div>
+        </article>
+
+        <!-- Project 4: Full Archive CTA -->
+        <article class="work-card" style="background:#111317;justify-content:center;align-items:center;text-align:center;">
+          <div>
+            <span class="work-header-subtitle" style="display:block;margin-bottom:1rem;">Archive</span>
+            <h3 class="work-card-title" style="margin-bottom:1.5rem;">Explore All 50+ Projects</h3>
+            <div class="button_wrapper" style="--button_wrapper-color:#D8D8D8;--out-time:200ms;--in-time:320ms;--arrow-size:2.5rem;--pad-x:0px;display:inline-block;">
+              <a href="/work" class="btn">
+                <span class="underline"><span class="u-right" style="background-color:#D8D8D8;"></span><span class="u-left" style="background-color:#D8D8D8;"></span></span>
+                <span class="word" style="color:#D8D8D8;">View Archive</span>
+                <span class="arrow arrow-right" style="width:var(--arrow-size);height:var(--arrow-size);" aria-hidden="true">
+                  <span class="arrow-sprite" style="justify-content:flex-end;">
+                    <svg width="10" height="9" viewBox="0 0 10 9" fill="none"><path d="M5.47372 8.652V6.552L8.32972 3.752V4.9L5.47372 2.1V-3.09944e-06L9.32372 3.836V4.816L5.47372 8.652ZM-0.000281237 5.11V3.542H8.60972V5.11H-0.000281237Z" fill="#D8D8D8"/></svg>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="work-card-line"></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 3D ROTATING STONE SERVICES SECTION ─── -->
+  <section id="trionn-services">
+    <!-- 371-frame 3D stone scroll-scrub canvas -->
+    <canvas id="stone-canvas"></canvas>
+
+    <!-- Center hero headline & subtitles -->
+    <div class="services-center-hero">
+      <span class="services-label" data-service-word>OUR EXPERTISE</span>
+      <h2 class="services-hero-title" data-service-word>We engineer digital experiences that lead industries.</h2>
+      <p class="services-hero-sub services-sub-1">Transforming brands through cutting-edge motion, design systems, and AI.</p>
+      <p class="services-hero-sub services-sub-2" style="opacity:0;">Building future-proof digital flagships with obsessive attention to detail.</p>
+    </div>
+
+    <!-- Floating glassmorphism service cards -->
+    <div class="services-cards-overlay">
+      <!-- Left column: Cards 01-03 -->
+      <div class="services-col">
+        <div class="svc-card card-left">
+          <div class="svc-card-num">01 / INTERFACE</div>
+          <h3 class="svc-card-title">Digital Products &amp; UI/UX</h3>
+          <p class="svc-card-desc">Intuitive design systems, complex web applications, and immersive mobile apps designed to convert and delight.</p>
+        </div>
+
+        <div class="svc-card card-left">
+          <div class="svc-card-num">02 / TECHNOLOGY</div>
+          <h3 class="svc-card-title">Creative Development</h3>
+          <p class="svc-card-desc">Fluid WebGL, Three.js shaders, micro-interactions, and GSAP motion driving unforgettable digital flagship sites.</p>
+        </div>
+
+        <div class="svc-card card-left">
+          <div class="svc-card-num">03 / IDENTITY</div>
+          <h3 class="svc-card-title">Brand Strategy &amp; Systems</h3>
+          <p class="svc-card-desc">Cohesive visual identities, typography directions, design tokens, and motion guidelines built for global scale.</p>
+        </div>
+      </div>
+
+      <!-- Right column: Cards 04-06 -->
+      <div class="services-col">
+        <div class="svc-card card-right">
+          <div class="svc-card-num">04 / INTELLIGENCE</div>
+          <h3 class="svc-card-title">AI-Powered Systems</h3>
+          <p class="svc-card-desc">Next-generation multimodal interfaces, automated design workflows, and smart predictive UX.</p>
+        </div>
+
+        <div class="svc-card card-right">
+          <div class="svc-card-num">05 / MOTION</div>
+          <h3 class="svc-card-title">3D &amp; Motion Direction</h3>
+          <p class="svc-card-desc">Cinematic product visuals, 3D character design, kinetic typography, and physics-driven interactive graphics.</p>
+        </div>
+
+        <div class="svc-card card-right">
+          <div class="svc-card-num">06 / SCALE</div>
+          <h3 class="svc-card-title">Full-Stack Architecture</h3>
+          <p class="svc-card-desc">Edge deployment, high-performance static rendering, headless CMS, and ultra-secure cloud infrastructure.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll bottom transition stripes (wipes smoothly into vision section) -->
+    <div class="services-stripes" aria-hidden="true">
+      <div class="svc-stripe"></div>
+      <div class="svc-stripe"></div>
+      <div class="svc-stripe"></div>
+      <div class="svc-stripe"></div>
+      <div class="svc-stripe"></div>
+    </div>
+  </section>
 
   <!-- ─── VISION SECTION ─── -->
   <section id="vision-section">
@@ -755,8 +931,11 @@
 <!-- ─── Scripts (order matters) ─── -->
 <script src="js/preloader.js" defer></script>
 <script src="js/nav.js" defer></script>
+<script src="js/symbol3d.js" defer></script>
 <script src="js/animations.js" defer></script>
 <script src="js/cards.js" defer></script>
+<script src="js/work-scroll.js" defer></script>
+<script src="js/services-stone.js" defer></script>
 <script src="js/contact.js" defer></script>
 
 <!-- Video responsive: show desktop/mobile based on viewport -->

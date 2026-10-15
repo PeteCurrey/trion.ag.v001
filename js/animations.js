@@ -48,21 +48,57 @@ window.initPageAnimations = function() {
   }
 
   // ── Hero headline reveal ──
-  const heroH1s = document.querySelectorAll('.main-banner h1');
-  heroH1s.forEach(h1 => {
-    h1.style.visibility = 'visible';
-    const chars = splitChars(h1);
+  const heroFirstH1 = document.querySelector('.banner-title-block h1:first-child');
+  if (heroFirstH1) {
+    heroFirstH1.style.visibility = 'visible';
+    const chars = splitChars(heroFirstH1);
     gsap.fromTo(chars,
       { y: '110%', opacity: 0 },
+      { y: '0%', opacity: 1, duration: 1, stagger: 0.02, ease: 'power3.out', delay: 0.2 }
+    );
+  }
+
+  const meanSpan = document.getElementById('s1-mean');
+  if (meanSpan) {
+    meanSpan.style.visibility = 'visible';
+    const chars = splitChars(meanSpan);
+    gsap.fromTo(chars,
+      { y: '110%', opacity: 0 },
+      { y: '0%', opacity: 1, duration: 1, stagger: 0.02, ease: 'power3.out', delay: 0.4 }
+    );
+  }
+
+  const cyclingEl = document.querySelector('.cycling-word');
+  if (cyclingEl) {
+    cyclingEl.style.visibility = 'visible';
+    gsap.fromTo(cyclingEl,
+      { y: '100%', opacity: 0, filter: 'blur(8px)' },
       {
-        y: '0%', opacity: 1,
-        duration: 1,
-        stagger: 0.02,
-        ease: 'power3.out',
-        delay: 0.2,
+        y: '0%', opacity: 1, filter: 'blur(0px)', duration: 0.8, ease: 'power3.out', delay: 0.6,
+        onComplete: () => {
+          const words = ['depth.', 'impact.', 'purpose.', 'intention.', 'something.'];
+          let wordIdx = 0;
+          setInterval(() => {
+            gsap.to(cyclingEl, {
+              y: '-100%',
+              opacity: 0,
+              filter: 'blur(8px)',
+              duration: 0.45,
+              ease: 'power2.in',
+              onComplete: () => {
+                cyclingEl.textContent = words[wordIdx];
+                wordIdx = (wordIdx + 1) % words.length;
+                gsap.fromTo(cyclingEl,
+                  { y: '100%', opacity: 0, filter: 'blur(8px)' },
+                  { y: '0%', opacity: 1, filter: 'blur(0px)', duration: 0.55, ease: 'power2.out' }
+                );
+              }
+            });
+          }, 3200);
+        }
       }
     );
-  });
+  }
 
   // Hero CTA
   const heroCta = document.getElementById('s1-cta');

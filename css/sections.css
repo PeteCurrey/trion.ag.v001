@@ -18,6 +18,27 @@ section {
   background: #0C0C0C;
   overflow: hidden;
   position: relative;
+  min-height: 100dvh;
+}
+
+#trionn-symbol-canvas-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: auto;
+  overflow: hidden;
+}
+
+#sticky-wrap {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+#sticky-wrap * {
+  pointer-events: auto;
 }
 
 .main-banner {
@@ -53,6 +74,19 @@ section {
   color: var(--color-light-font);
   z-index: 2;
   visibility: hidden; /* revealed by GSAP */
+}
+
+.cycling-word-wrapper {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  overflow: hidden;
+  height: 1.15em;
+}
+
+.cycling-word {
+  display: inline-block;
+  will-change: transform, opacity, filter;
 }
 
 /* Est. badge (hero) */
@@ -592,4 +626,317 @@ section {
 }
 @media (max-width: 767px) {
   .js-kf-line-wrap { transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════
+   SELECTED WORK SECTION (Horizontal Pin Scroll)
+═══════════════════════════════════════════════════ */
+#work-section {
+  position: relative;
+  background: #0C0C0C;
+  color: var(--color-light-font);
+  overflow: hidden;
+  width: 100%;
+}
+
+.work-header {
+  padding-top: 5rem;
+  padding-bottom: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+@media (min-width: 1024px) {
+  .work-header {
+    padding-top: 7rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+.work-header-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.work-header-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.work-track-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.work-track {
+  display: flex;
+  flex-direction: row;
+  will-change: transform;
+}
+
+.work-card {
+  flex: 0 0 88vw;
+  max-width: 580px;
+  position: relative;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 65vh;
+}
+@media (min-width: 768px) {
+  .work-card {
+    flex: 0 0 55vw;
+    padding: 3rem 2.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .work-card {
+    flex: 0 0 42vw;
+    max-width: 660px;
+    padding: 4rem 3.5rem;
+    min-height: 75vh;
+  }
+}
+
+.work-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: #14161B;
+  margin-bottom: 2rem;
+}
+
+.work-card-media img,
+.work-card-media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work-card:hover .work-card-media img,
+.work-card:hover .work-card-media video {
+  transform: scale(1.04);
+}
+
+.work-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.work-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.65);
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.work-card-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.work-card-desc {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.work-card-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  transform-origin: top;
+}
+
+/* ═══════════════════════════════════════════════════
+   3D STONE SERVICES SECTION
+═══════════════════════════════════════════════════ */
+#trionn-services {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: #040508;
+  color: #fff;
+}
+
+#stone-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.services-center-hero {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  text-align: center;
+  padding: 2rem;
+}
+
+.services-label {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 1.25rem;
+}
+
+.services-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5.5vw, 5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+  color: #fff;
+  transition: opacity 0.3s, filter 0.3s;
+}
+
+.services-hero-sub {
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 580px;
+  margin-top: 1.5rem;
+  line-height: 1.5;
+  transition: opacity 0.4s;
+}
+
+.services-cards-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 clamp(1rem, 4vw, 5rem);
+}
+
+.services-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 320px;
+}
+@media (min-width: 1200px) {
+  .services-col {
+    max-width: 380px;
+    gap: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .services-cards-overlay {
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 4rem;
+  }
+  .services-col {
+    max-width: 100%;
+  }
+  .services-col:last-child {
+    display: none; /* Show 3 cards on mobile for clean fit */
+  }
+}
+
+.svc-card {
+  background: rgba(14, 16, 20, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.3s, transform 0.3s, border-color 0.3s;
+  pointer-events: none;
+}
+@media (min-width: 1200px) {
+  .svc-card { padding: 2rem; }
+}
+
+.svc-card:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(20, 23, 30, 0.8);
+}
+
+.svc-card-num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 0.5rem;
+}
+
+.svc-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.svc-card-desc {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+}
+
+.services-stripes {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  display: flex;
+  pointer-events: none;
+}
+
+.svc-stripe {
+  flex: 1;
+  height: 100%;
+  background: #E8E8E8;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  will-change: transform;
 }
