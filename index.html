@@ -307,12 +307,15 @@
 
   <!-- ─── HERO SECTION ─── -->
   <div id="hero-section">
-    <!-- Three.js 3D Interactive Extruded TRIONN Symbol -->
-    <div id="trionn-symbol-canvas-wrap"></div>
+    <!-- hero-pin-wrap is position:sticky so viewport stays static while
+         the 500vh #hero-section scrolls — driving the Porsche animation -->
+    <div id="hero-pin-wrap">
+      <!-- Three.js Porsche 992 GT3 RS WebGL canvas -->
+      <div id="trionn-symbol-canvas-wrap"></div>
 
-    <div id="sticky-wrap">
-      <section class="main-banner">
-        <div class="tr__container banner-inner">
+      <div id="sticky-wrap">
+        <section class="main-banner">
+          <div class="tr__container banner-inner">
 
           <!-- Top block: headline + CTA -->
           <div class="banner-top-block">
@@ -474,6 +477,7 @@
       </section>
 
     </div><!-- /sticky-wrap -->
+    </div><!-- /hero-pin-wrap -->
   </div><!-- /hero-section -->
 
   <!-- ─── SELECTED WORK SECTION (Horizontal Pin Scroll) ─── -->
